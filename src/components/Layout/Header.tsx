@@ -8,15 +8,17 @@ type Props = {
 }
 
 const Header: React.FC<Props> = (props: Props) => {
-    return <>
-    <header className={classes.header}>
-        <h1>KueKita</h1>
-        <HeaderCartButton onClick={props.onShowCart}/>
-    </header>
-    <div className={classes['main-image']}>
-        <img src={mealsImage} alt="meals image" />
-    </div>
-    </>
+    return (
+        <>
+            <header className={classes.header}>
+                <h1>KueKita</h1>
+                <HeaderCartButton onClick={props.onShowCart}/>
+            </header>
+            <div className={classes['main-image']}>
+                <img src={mealsImage} alt="meals image" />
+            </div>
+        </>
+        )
 }
 
 export default Header;
