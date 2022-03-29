@@ -86,6 +86,7 @@ const CartProvider: React.FC<Props> = (props: Props) => {
         removeItem: removeItemHandler,
         clearCart: clearCartHandler,
     }
+    
     return <CartContext.Provider value={cartContext}>{props.children}</CartContext.Provider>
 }
 
