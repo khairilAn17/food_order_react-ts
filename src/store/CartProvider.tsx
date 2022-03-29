@@ -43,6 +43,7 @@ const cartReducer = (state: TDefaultCartState, action: TAction): TDefaultCartSta
             totalAmount: updatedTotalAmount
         }
     }
+    
     if(action.type === 'REMOVE'){
         const existingCartItemIndex = state.items.findIndex((item) => item.id === action.id);
 
