@@ -33,6 +33,7 @@ const AvailableMeals = () => {
         price: resData[key].price
       })
     }
+    
     setMeals(loadMeals);
     setIsLoading(false);
   }
