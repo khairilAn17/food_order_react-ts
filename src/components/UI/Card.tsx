@@ -4,9 +4,11 @@ type Props = {
     children: React.ReactNode;
 }
 const Card: React.FC<Props> = (props: Props) =>{
-    return <div className={classes.card}>
-        {props.children}
-    </div>
+    return (
+            <div className={classes.card}>
+                {props.children}
+            </div>
+        )
 }
 
 export default Card;
