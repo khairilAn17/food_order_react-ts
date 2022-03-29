@@ -11,6 +11,7 @@ type Props ={
 
 const CartItem: React.FC<Props> = (props: Props) => {
   const price = `$${props.price.toFixed(2)}`;
+  
   return (
     <li className={classes['cart-item']}>
       <div>
