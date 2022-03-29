@@ -13,6 +13,7 @@ export type TInitialState = {
     totalAmount: number;
     addItem: (item: TItem) => void;
     removeItem: (id: string) => void;
+    clearCart: () => void,
 }
 
 const item = {
@@ -25,7 +26,8 @@ export const initialState = {
     items: [],
     totalAmount: 0,
     addItem: (item: TItem) => {},
-    removeItem: (id: string) => {}
+    removeItem: (id: string) => {},
+    clearCart: () => {}
 }
 const CartContext = React.createContext<TInitialState>(initialState);
 

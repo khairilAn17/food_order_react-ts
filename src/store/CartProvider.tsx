@@ -17,6 +17,7 @@ const defaultCartState = {
 export type TAction = 
     | {type: 'ADD', item: TItem} 
     | {type: 'REMOVE', id: string}
+    | {type: 'CLEAR'}
 
 const cartReducer = (state: TDefaultCartState, action: TAction): TDefaultCartState => {
     if(action.type === 'ADD'){
@@ -60,6 +61,10 @@ const cartReducer = (state: TDefaultCartState, action: TAction): TDefaultCartSta
             totalAmount: updatedTotalAmount
         }
     }
+
+    if(action.type === 'CLEAR'){
+        return defaultCartState
+    }
     return defaultCartState;
 }
 const CartProvider: React.FC<Props> = (props: Props) => {
@@ -71,11 +76,15 @@ const CartProvider: React.FC<Props> = (props: Props) => {
     const removeItemHandler = (id: string) => {
         dispatchCartAction({type: 'REMOVE', id});
     };
+    const clearCartHandler = () => {
+        dispatchCartAction({type: 'CLEAR'})
+    }
     const cartContext: TInitialState= {
         items: cartState.items,
         totalAmount: cartState.totalAmount,
         addItem: addItemToCartHandler,
-        removeItem: removeItemHandler
+        removeItem: removeItemHandler,
+        clearCart: clearCartHandler,
     }
     return <CartContext.Provider value={cartContext}>{props.children}</CartContext.Provider>
 }
