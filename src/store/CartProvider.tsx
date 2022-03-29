@@ -43,7 +43,7 @@ const cartReducer = (state: TDefaultCartState, action: TAction): TDefaultCartSta
             totalAmount: updatedTotalAmount
         }
     }
-    
+
     if(action.type === 'REMOVE'){
         const existingCartItemIndex = state.items.findIndex((item) => item.id === action.id);
 
@@ -66,6 +66,7 @@ const cartReducer = (state: TDefaultCartState, action: TAction): TDefaultCartSta
     if(action.type === 'CLEAR'){
         return defaultCartState
     }
+    
     return defaultCartState;
 }
 const CartProvider: React.FC<Props> = (props: Props) => {
