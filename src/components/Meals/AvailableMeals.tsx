@@ -21,7 +21,7 @@ const AvailableMeals = () => {
     if(!res.ok){
       throw new Error("something went wrong");
     }
-    
+
     const resData = await res.json();
 
     const loadMeals = [];
@@ -36,6 +36,7 @@ const AvailableMeals = () => {
     setMeals(loadMeals);
     setIsLoading(false);
   }
+  
   useEffect(() => { 
     fetchMeals().catch(error => {
       setIsLoading(false);
